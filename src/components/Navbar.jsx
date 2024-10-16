@@ -1,4 +1,5 @@
 import React, {useState} from 'react'
+import {Link} from 'react-router-dom'
 import {FaBars, FaTimes, FaGithub, FaLinkedin, FaFacebook} from 'react-icons/fa'
 // Email import { HiOutlineMail } from 'react-icons/hi'
 // Resume import { BsFillPersonLinesFill } from 'react-icons/bs'
@@ -11,16 +12,37 @@ const Navbar = () => {
     <div name="navbar" className='fixed w-full h-20 flex justify-between items-center px-4 bg-black text-gray-300'>
       {/* logo */}
       <div>
-        <img src={Logo} alt="DevMentor Labs Logo" style={{width: '200px'}} />
+        <nav>
+          <Link to="/"><img src={Logo} alt="DevMentor Labs Logo" style={{width: '200px'}} /></Link>
+        </nav>
+        
       </div>
       {/* menu */}
       <div className=''>
+        
         <ul className='hidden md:flex'>
-            <li>Home</li>
+            <li>
+              <nav>
+                <Link to="/">Home</Link>
+              </nav>
+            </li>
             <li>About</li>
             <li>Developers</li>
             <li>Mentors</li>
-            <li>Contact</li>
+            <li>
+              <nav>
+                <Link to={{
+                            pathname:"/",
+                            hash:"contactdiv"
+                          }} >Contact
+                </Link>
+              </nav>
+            </li>
+            <li>
+              <nav>
+                <Link to="/ContactUsMessages">View Messages</Link>
+              </nav>
+            </li>
         </ul>
       </div>
       
@@ -32,11 +54,28 @@ const Navbar = () => {
       {/* mobile menu */}
       
       <ul className={!nav ? 'hidden' : 'absolute top-0 left-0 w-full h-screen bg-[#54575c] flex flex-col justify-center items-center'}>
-          <li className='py-6 text-4xl'>Home</li>
+          <li className='py-6 text-4xl'>
+            <nav>
+              <Link to="/">Home</Link>
+            </nav>
+          </li>
           <li className='py-6 text-4xl'>About</li>
           <li className='py-6 text-4xl'>Developers</li>
           <li className='py-6 text-4xl'>Mentors</li>
-          <li className='py-6 text-4xl'>Contact</li>
+          <li className='py-6 text-4xl'>
+            <nav>
+              <Link to={{
+                          pathname:"/",
+                          hash:"contactdiv"
+                        }} >Contact
+              </Link>
+            </nav>
+          </li>
+          <li className='py-6 text-4xl'>
+            <nav>
+              <Link to="/ContactUsMessages">View Messages</Link>
+            </nav>
+          </li>
       </ul>
       
       

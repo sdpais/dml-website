@@ -43,34 +43,7 @@ const Contact = () => {
       DisplayFailureMessage(err.message);
     })
   }
-  const handleSubmitxhr = async (e) => {
-    let xhr = new XMLHttpRequest();
-    xhr.callback = xhrSuccess;
-    xhr.onerror = xhrError;
-    let urlContact = "http://localhost:9200/ContactUs/";
-    xhr.open("POST", urlContact, true);
-    xhr.send(JSON.stringify({
-      internalid : '',
-      fullname: fullname,
-      email: email,
-      phone: phone,
-      message: message,
-      spam: "true",
-      createdOn: "2024-10-08T03:38:01.721Z"
-    }));
-
-  }
-  const xhrSuccess = async (e)=> {
-    if (this.status === 200) {
-      setFullName("");
-      setEmail("");
-      setPhone("");
-      setMessage("");
-      DisplaySuccessMessage("User created successfully! ");
-    } else {
-      DisplayFailureMessage('Some error occured! The status is ' + this.status);
-    }
-  }
+ 
   const DisplaySuccessMessage = async (message) => {
     setStatusSuccessMessage(message);
     setTimeout(() => DisplaySuccessMessage(""), 3000 )
@@ -79,48 +52,7 @@ const Contact = () => {
     setStatusFailureMessage(message);
     setTimeout(() => DisplayFailureMessage(""), 3000 )
   }
-  const xhrError = async (e) => {
-    console.log(e.err);
-    console.error(this.statusText);
-  }
-  const handleSubmitAxios1 = async (e) => {
-    e.preventDefault();
-    
-    axios({
-      url : "http://localhost:9200/ContactUs/",
-      method : "POST",
-      credentials: true,
-      headers : {
-        "Content-Type":"application/json",
-        'Access-Control-Allow-Origin': '*',
-        'Access-Control-Allow-Methods' : 'GET, PUT, POST, DELETE, OPTIONS',
-        },
-      data: JSON.stringify({
-          internalid : '',
-          fullname: fullname,
-          email: email,
-          phone: phone,
-          message: message,
-          spam: "true",
-          createdOn: "2024-10-08T03:38:01.721Z"
-        })
-      })
-      .then((res) => {
-        if (res.status === 200) {
-          setFullName("");
-          setEmail("");
-          setPhone("");
-          setMessage("");
-          DisplaySuccessMessage("User created successfully! ");
-        } else {
-          DisplayFailureMessage('Some error occured! The status is ' + res.status);
-
-        }})
-      // Catch errors if any
-      .catch((err) => {
-        console.log(err);
-      })
-  }
+ 
   return (
     <div name='contact' className='w-full h-screen bg-[#0a192f] flex justify-center items-center pl-14 p-4'>
       <form onSubmit={handleSubmit} className='flex flex-col max-w-[600px] w-full'>

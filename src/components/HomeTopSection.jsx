@@ -1,7 +1,7 @@
 import React from 'react'
 
 
-const Home = () => {
+const HomeTopSection = () => {
   
   
 
@@ -18,4 +18,4 @@ const Home = () => {
   )
 }
 
-export default Home
+export default HomeTopSection
