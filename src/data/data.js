@@ -1,7 +1,7 @@
-import Grad from '../assets/projects/grad.jpg'
-import Discussion from '../assets/projects/discussion.jpg'
-import Mentorship from '../assets/projects/mentorship.jpg'
-import Review from '../assets/projects/review.jpg'
+import Grad from './assets/projects/grad.jpg'
+import Discussion from './assets/projects/discussion.jpg'
+import Mentorship from './assets/projects/mentorship.jpg'
+import Review from './assets/projects/review.jpg'
 
 export const data=[
     {

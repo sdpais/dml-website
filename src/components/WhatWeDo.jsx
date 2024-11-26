@@ -11,7 +11,7 @@ const WhatWeDo = () => {
       <div 
         key={index} 
         style={{backgroundImage: `url(${item.image})`}}
-        className="shadow-lg shadow-[#040c16] group container rounded-md flex bg-blue-300 bg-contain bg-no-repeat h-[400px] bg-center justify-center text-center items-center mx-auto content-div "
+        className="shadow-lg shadow-[#040c16] group container rounded-md bg-blue-300 bg-contain bg-no-repeat h-[400px] bg-center justify-center text-center "
         >
               {/* Hover effect for images */}
               <div className="opacity-0 group-hover:opacity-50 group-hover:bg-gray-200 ">

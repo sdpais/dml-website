@@ -7,24 +7,25 @@ import WhatWeDo from "./components/WhatWeDo";
 function Home() {
 
   return (
-    <div className="container">
+    <div className="container mx-auto divide-y">
       <div  className="flex flex-col ">
         <Navbar />
       </div>
-      <div  className="container w-full justify-center">
+      <div className="flex flex-col items-center mx-auto">
+      <div  className="inline w-full justify-center">
         <HomeTopSection />
       </div>
-      <div  className="container w-full justify-center">
+      <div  className="inline w-full justify-center">
         <div className="w-[60%] m-auto pt-11">
           <Carousel />
         </div>
       </div>
-      <div  className="container w-full justify-center">
-      <WhatWeDo />
+      <div  className="inline w-full justify-center">
+        <WhatWeDo />
       </div>
-      <div className="h-96 w-full">&nbsp;spacer</div>
-      <div  className="container justify-center">
+      <div  className="inline w-full justify-center">
         <Contact />
+      </div>
       </div>
     </div>
   );

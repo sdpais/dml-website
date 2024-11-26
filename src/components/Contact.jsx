@@ -23,7 +23,8 @@ const Contact = () => {
       }, {
         headers: {
           'Content-Type':'application/json',
-          'Access-Control-Allow-Origin': 'http://localhost:3000/'
+          'Access-Control-Allow-Origin': 'http://localhost:3000/',
+          'X-DML-API-Key' : 'DAQWDZASDWWETRVCdscsdfewwerwerW2343453453%^&&@$#%^cweAwdW$5^7u8343453#$#%#$5'
         }
       })
     .then((res) => {
